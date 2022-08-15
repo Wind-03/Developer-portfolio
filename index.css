@@ -1,0 +1,387 @@
+html, body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto:wght@300&family=Rubik:wght@400;500&display=swap');
+body{
+    background-color: black;
+    color:lightgrey;
+}
+/**************
+    LAYOUT
+**************/
+.navbar{
+    width:90%;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 10px 10px;
+    padding-left: 10%;
+    margin:0 auto;
+}
+.container{
+    width:90%;
+}
+.navbar p{
+    grid-column:1/2;
+    grid-row:2/3;
+    font-size:1.2em;
+}
+.navbar ul{
+    grid-column:2/3;
+    display:flex;
+    justify-content: space-between;
+    align-items:baseline;
+    grid-row:2/3;
+    list-style:none;
+    padding:10px;
+}
+.navbar a{
+    grid-column:4/5;
+    grid-row:2/3;
+    padding-top:10px;
+    
+}
+a button{
+    padding:15px 25px;
+    background-color:rgb(247, 208, 109);
+    border:none;
+    font-family: 'Lora', serif;
+    font-size:1.1em;
+}
+.intro{
+    margin-top:7em;
+    padding-left:10%;
+    display:grid;
+    grid-template-columns:200px 200px 200px 150px 200px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header  header header . . ." 
+    "main main main . . ."
+    "footer1 footer2 footer3 footer4 footer5 footer6";
+    font-family: 'Lora', serif;
+    text-align:left;
+    justify-content:center;
+}
+.intro h1{
+    grid-area: header;
+    font-size:3.2em;
+    font-weight:200;
+    margin-bottom:0;
+}
+.intro h3{
+    grid-area: main;
+    font-size:1em;
+    font-weight:100;
+    color:rgb(153, 151, 151);
+    padding-top:0;
+    margin-top:10px;
+    padding-bottom:40px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+}
+.intro .morgan{grid-area: footer2;}
+.intro .samsung{grid-area: footer3;}
+.intro .tinder{grid-area: footer4;}
+.intro .verizon{grid-area: footer5;}
+.intro .visa{grid-area: footer6;}
+.intro .walmart{grid-area: footer1;}
+.articles{
+    display:grid;
+    grid-template-columns: auto auto 1em;
+    grid-template-areas: "article1 article2";
+    margin-top:7em;
+    width:90%;
+    padding-left:10%;
+    padding-right:10%;
+    grid-column-gap: 40px;
+    justify-content:center;
+}
+.article-one{
+    grid-area:article1;
+}
+.article-two{
+    grid-area:article2;
+}
+span{
+    font-size: smaller;
+}
+.about{
+    display:grid;
+    grid-template-columns:auto auto;
+    grid-template-areas: "about-one about-two";
+    width:90%;
+    padding-left:10%;
+    justify-content:center;
+    margin-top:3em;
+    background-color:rgba(72, 72, 90, 0.466);
+    
+}
+.about-one{
+    grid-area: about-one;
+    width:90%;
+    padding-top:40px;
+}
+.about-two{
+    grid-area: about-two;
+    padding-top:50px;
+}
+.work-with-me{
+    padding-top:4em;
+    padding-bottom:1.6em;
+    width:90%;
+    padding-left:10%;
+    padding-right:10%;
+}
+footer{
+    padding-left:10%;
+    padding-right:10%;
+    margin-top:3em;
+    width:90%;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 10px 10px;
+    background-color:rgba(72, 72, 90, 0.466);
+    height:70px;
+}
+footer P{
+    grid-column: 1/2;
+    grid-row:2/3;
+}
+.socials{
+    grid-column:4/5;
+    grid-row:4/5;
+    margin:0;
+    padding-left:200px;
+}
+.hamburger {
+    display: none;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        display:flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 90%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .contact-btn{
+        display:none;
+    }
+    .navbar{
+        display:flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding-right:10%;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .container{
+        width:768px;
+    }
+    .intro{
+        width:90%;
+        display:grid;
+        grid-template-columns: 230px 230px 200px ;
+        grid-row:auto;
+        grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer1 footer2 footer3 "
+        "footer4 footer5 footer6";
+        justify-content:center;
+    }
+    .intro h1{
+        grid-area: header;
+    }
+    .intro p{
+        grid-area: main;
+    }
+    .intro .walmart{grid-area: footer1;}
+    .intro .morgan{grid-area: footer2;}
+    .intro .samsung{grid-area: footer5;}
+    .intro .tinder{grid-area: footer4;}
+    .intro .verizon{grid-area: footer6;}
+    .intro .visa{grid-area: footer3;}
+    .intro img{
+        padding:20px;
+    }
+    .articles{
+        display:grid;
+        grid-template-columns: auto ;
+        grid-template-rows: auto auto ;
+        grid-template-areas: 
+        "article1 ."
+        "article2 ."
+        ;
+        justify-content:center;
+    }
+    .article-one{
+        grid-area:article1;
+        align-self: center;
+    }
+    .article-two{
+        grid-area:article2;
+        align-self: center;
+    }
+    .articles img{
+        width:650px;
+    }
+    .about{
+        display:grid;
+        grid-template-rows:auto auto;
+        grid-template-areas: 
+        "about-one"
+        "about-two"
+        ;
+        justify-content:center;
+    }
+    .socials{
+        grid-column:3/4;
+        grid-row:4/5;
+        margin:0;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .intro{
+        display:grid;
+        margin-top:2em;
+        grid-template-columns:20px 190px 190px 25px;
+        grid-row:auto;
+        grid-template-areas: 
+        ". header header ."
+        ". main main ."
+        ". footer1 footer2 ." 
+        ". footer5 footer6 ." 
+        ". footer3 footer4 .";
+        justify-content: center;
+    }
+    .intro h1{
+        grid-area: header;
+        justify-self: center;
+    }
+    .intro p{
+        grid-area: main;
+    }
+    .intro .walmart{grid-area: footer1;}
+    .intro .morgan{grid-area: footer2;}
+    .intro .samsung{grid-area: footer5;}
+    .intro .tinder{grid-area: footer4;}
+    .intro .verizon{grid-area: footer6;}
+    .intro .visa{grid-area: footer3;}
+    .intro img{
+        padding-bottom:20px;
+    }
+    .articles{
+        display:grid;
+        grid-template-columns:20px 380px 25px;
+        grid-template-rows: auto auto ;
+        grid-template-areas: 
+        ". article1 ."
+        ". article2 ."
+        ;
+        justify-content: center;
+    }
+    .article-one{
+        grid-area:article1;
+    }
+    .article-two{
+        grid-area:article2;
+    }
+    .articles img{
+        width:400px;
+    }
+    .about{
+        display:grid;
+        grid-template-rows:auto auto;
+        grid-template-areas: 
+        "about-one"
+        "about-two"
+        ;
+    }
+    footer{
+        margin-top:3em;
+        width:90%;
+        display:grid;
+        grid-template-columns: 200px 25px 200px;
+        background-color:rgba(72, 72, 90, 0.466);
+        height:90px;
+        grid-template-areas: "text . socials";
+    }
+    footer P{
+        grid-area: text;
+        font-size:1.2em;
+    }
+    .socials{
+        margin:0;
+        grid-area: socials;
+    }
+}
+/******************
+    TYPOGRAPHY
+******************/
+a{
+    text-decoration:none;
+    color:rgb(153, 151, 151);
+    font-size:1em;
+    font-family: 'Roboto', sans-serif;
+}
+.articles h1,
+.about-one h1,
+.work-with-me h1{
+    font-family: 'Lora', serif;
+    font-weight:200;
+    font-size:2.5em
+}
+.articles p,
+.about p,
+.work-with-me p{
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+    width:80%;
+    color:rgb(153, 151, 151);
+    font-size:1em;
+}
+.article-two p{
+    width:90%;
+}
+.article-one p{
+    width:80%;
+}
+footer p{
+    font-size:1.4em;
+    font-family: 'Lora', serif;
+    font-size:200;
+}
